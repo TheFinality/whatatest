@@ -1,7 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="752182282017-998m30p24kqbal1s5p4jitjbkh3su522.apps.googleusercontent.com">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -10,13 +13,16 @@
     <link href="index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="shortcut icon" type="image/png" href="logo.png" />
-    <title>NGINX Proxy</title>
+    <title>not sus</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8243621790831254"
+     crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
-        <img src="logo-full.png" width="250" height="250">
+        <img src="https://o.remove.bg/downloads/61f7d066-72c8-4623-95e2-a9d196aee0cf/original-removebg-preview.png" width="250" height="250">
         <div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <script>
                 function go() {
                     var input = document.getElementById('url-target');
@@ -26,17 +32,79 @@
                         alert('Please provide a link. It does not require https://.');
                     }
                 }
+                function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {   
+    document.cookie = name+'=; Max-Age=-99999999;';  
+}
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  var email = profile.getEmail()
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  fetch("https://womginxtestingpaid.eclipseeevee.repl.co/paid.json", {
+  "headers": {
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "accept-language": "en-US,en;q=0.9",
+    "cache-control": "no-cache",
+    "pragma": "no-cache",
+    "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Google Chrome\";v=\"96\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "none",
+    "sec-fetch-user": "?1",
+    "upgrade-insecure-requests": "1"
+  },
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "omit"
+})
+.then(response => response.json())
+  .then(data => {
+    if (data.includes(email)) {
+      document.getElementById('goButton').disabled = false
+      setCookie('paid', email, '365')
+    } else {
+      var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      alert('u didnt pay')
+      eraseCookie('paid')
+    });
+    }
+  })
+  
+}
             </script>
-            <span class="w3-xlarge">Input your URL here: </span>
+            <span class="w3-xlarge">Input your URL here(wont work if u dont sign in) </span>
             <div>
                 <input class="w3-xlarge" type='text' placeholder='https://www.google.com' id='url-target'
                     onkeydown='if(event.key==="Enter") go()' />
-                <button onclick='go()' class="w3-xlarge">Go!</button>
+                <button onclick='go()' class="w3-xlarge" disabled="true" id="goButton">Go!</button>
             </div>
             <br>
             <br>
             </p>
-            <p class="w3-medium">View GitHub source <a class="w3-medium" href="https://github.com/binary-person/womginx">here</a></p>
+        <h3>not gonna be free in a week</h3>
         </div>
     </div>
 </body>
