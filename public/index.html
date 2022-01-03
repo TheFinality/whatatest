@@ -58,7 +58,7 @@ function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   var email = profile.getEmail()
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  fetch("https://womginxtestingpaid.eclipseeevee.repl.co/paid.json", {
+  fetch(`https://womginxtestingpaid.eclipseeevee.repl.co/paid.json?rand=${Date.Now()}`, {
   "headers": {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
     "accept-language": "en-US,en;q=0.9",
