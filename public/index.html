@@ -83,12 +83,12 @@ function onSignIn(googleUser) {
   .then(data => {
     if (data.includes(email)) {
       document.getElementById('goButton').disabled = false
-      setCookie('paid', 'yes', '365')
+      setCookie('paidFixedIdk', 'yes', '365')
     } else {
       var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       alert('u didnt pay')
-      eraseCookie('paid')
+      eraseCookie('paidFixedIdk')
     });
     }
   })
